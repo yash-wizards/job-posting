@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  api:
+    container_name: job-postings-service
+    build: .
+    restart: always
+    ports:
+      - "5000:8080"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    networks:
+      - jobnet
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:7.0
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: job-postings
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - jobnet
+
+networks:
+  jobnet:
+
+volumes:
+  mongo_data:
