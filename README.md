@@ -15,7 +15,7 @@ A production-ready RESTful API service that exposes job postings in XML format f
 - [Deployment](#deployment)
 - [Project Structure](#project-structure)
 
-## ✨ Features
+##  Features
 
 ### Core Features
 - ✅ **XML Feed Generation** - Standards-compliant XML output for Arbetsförmedlingen
@@ -24,13 +24,13 @@ A production-ready RESTful API service that exposes job postings in XML format f
 - ✅ **Health Monitoring** - Comprehensive health check endpoints
 
 ### Enterprise Features
-- 🔒 **Security Hardened** - Helmet.js, CORS, input validation
-- 📊 **Structured Logging** - Winston-based logging with multiple transports
-- 🐳 **Docker Ready** - Multi-stage builds for optimized images
-- 📈 **Performance Optimized** - Database indexing, connection pooling, compression
-- 🔄 **CI/CD Pipeline** - GitHub Actions for automated testing and deployment
+- **Security Hardened** - Helmet.js, CORS, input validation
+- **Structured Logging** - Winston-based logging with multiple transports
+- **Docker Ready** - Multi-stage builds for optimized images
+- **Performance Optimized** - Database indexing, connection pooling, compression
+- **CI/CD Pipeline** - GitHub Actions for automated testing and deployment
 
-## 🏗 Architecture
+## Architecture
 
 ### Technology Stack
 
@@ -53,20 +53,20 @@ A production-ready RESTful API service that exposes job postings in XML format f
 3. **Validation**: Joi-based schema validation for all inputs
 4. **Database Optimization**: Strategic indexes on frequently queried fields
 
-## 📦 Prerequisites
+## Prerequisites
 
 - **Node.js**: >= 18.0.0
 - **npm**: >= 9.0.0
 - **Docker**: >= 20.10.0 (optional, for containerized deployment)
 - **Docker Compose**: >= 2.0.0 (optional)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Docker (Recommended)
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/job-postings-service.git
+git clone https://github.com/yash-wizards/job-posting.git
 cd job-postings-service
 
 # 2. Create environment file
@@ -85,7 +85,7 @@ The API will be available at `http://localhost:5000`
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/job-postings-service.git
+git clone https://github.com/yash-wizards/job-posting.git
 cd job-postings-service
 
 # 2. Install dependencies
@@ -199,10 +199,10 @@ NODE_ENV=development
 PORT=8080
 API_VERSION=v1
 
-MONGODB_URI=mongodb+srv://yashmalawant99_db_user:TUFKjPlJ4q6KJyYg@cluster0.1qmqhmk.mongodb.net/
-MONGODB_DATABASE=job-postings
-MONGODB_USER='yashmalawant99_db_user'
-MONGODB_PASSWORD='TUFKjPlJ4q6KJyYg'
+MONGODB_URI=
+MONGODB_DATABASE=
+MONGODB_USER=
+MONGODB_PASSWORD=
 
 CACHE_TTL=300
 CACHE_ENABLED=true
