@@ -76,7 +76,7 @@ cp .env.example .env
 docker compose up 
 
 # 4. Verify the service is running
-curl http://localhost:8080/health
+ http://localhost:5000/health
 ```
 
 The API will be available at `http://localhost:5000`
@@ -103,11 +103,15 @@ npm run seed
 
 # 6. Start the development server
 npm run dev
+
+# 7. Verify the service is running
+ http://localhost:8080/health
+
 ```
 
 ## 📖 API Documentation
 
-### Base URL
+### Base URL (Docker)
 ```
 http://localhost:5000
 ```
@@ -122,6 +126,8 @@ GET /api/job-postings?format=json
 GET /api/job-postings?page=1&pageSize=20
 GET /api/job-postings?page=1&pageSize=20&format=json
 ```
+
+// XML
 
 <?xml version="1.0" encoding="UTF-8"?>
 <jobPostings xmlns="http://www.arbetsformedlingen.se/xml/schema" 
@@ -173,22 +179,6 @@ GET /api/job-postings?page=1&pageSize=20&format=json
   }
 }
 ```
-// XML
-{
-  "title": "Senior Developer",
-  "description": "We are looking for...",
-  "url": "https://example.com/job",
-  "company": "Tech Corp",
-  "location": "Stockholm",
-  "employmentType": "full-time",
-  "salary": {
-    "min": 50000,
-    "max": 70000,
-    "currency": "SEK"
-  },
-  "enabled": true,
-  "publishedAt": "Mon Dec 08 2025"
-}
 
 ## ⚙️ Environment Configuration
 
@@ -212,9 +202,6 @@ MAX_PAGE_SIZE=100
 
 LOG_LEVEL=info
 
-RATE_LIMIT_WINDOW_MS=60000
-RATE_LIMIT_MAX_REQUESTS=100
-
 CORS_ORIGIN=*
 ```
 
@@ -225,7 +212,6 @@ CORS_ORIGIN=*
 | `NODE_ENV` | Environment (development/production/test) | `development` |
 | `PORT` | Server port | `8080` |
 | `MONGODB_URI` | MongoDB connection string | `mongodb+srv://yashmalawant99_db_user:TUFKjPlJ4q6KJyYg@cluster0.1qmqhmk.mongodb.net/` |
-| `CACHE_TTL` | Cache time-to-live in seconds | `300` |
 | `DEFAULT_PAGE_SIZE` | Default items per page | `20` |
 | `MAX_PAGE_SIZE` | Maximum items per page | `100` |
 | `LOG_LEVEL` | Logging level (error/warn/info/debug) | `info` |
@@ -325,7 +311,7 @@ job-postings-service/
 ### Health Endpoint
 
 ```bash
-curl http://localhost:8080/health
+curl http://localhost:5000/health
 ```
 
 ### Logs
